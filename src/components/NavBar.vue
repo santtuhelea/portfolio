@@ -45,7 +45,7 @@
         </v-list-item-content>
       </v-list-item>
       <v-list nav class="pb-0 pt-12">
-        <v-list-item v-for="(nav, n) in navLinks" :key="n" link>
+        <v-list-item v-for="(nav, n) in navLinks" :key="n" link @click="goToSection(nav.sectionId)">
           <v-list-item-content>
             <v-list-item-title class="text-center font-weight-medium title">
               {{ nav.title }}
@@ -73,11 +73,11 @@ export default {
   data() {
     return {
       navLinks: [
-        { title: 'About me' },
-        { title: 'Experience' },
-        { title: 'Skills & Education' },
-        { title: 'Portfolio' },
-        { title: 'Contact' },
+        { title: 'About me', sectionId: 'About' },
+        { title: 'Experience', sectionId: 'Experience' },
+        { title: 'Skills & Education', sectionId: 'SkillsAndEdu' },
+        { title: 'Portfolio', sectionId: 'Portfolio' },
+        { title: 'Contact', sectionId: 'Contact' },
       ],
       drawerOpen: this.$vuetify.breakpoint.width > 600 ? true : false,
       menuFab: false,
@@ -88,6 +88,10 @@ export default {
       if (typeof window === 'undefined') return
       const top = window.pageYOffset || e.target.scrollTop || 0
       this.menuFab = top > 100
+    },
+    goToSection(element) {
+      this.$vuetify.goTo(document.getElementById(element))
+      this.drawerOpen = false
     },
   },
 }

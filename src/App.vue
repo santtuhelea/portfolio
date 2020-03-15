@@ -76,7 +76,7 @@
             </v-col>
           </v-row>
         </section>
-        <section class="container container--fluid" id="Skills and education">
+        <section class="container container--fluid" id="SkillsAndEdu">
           <v-row>
             <v-col cols="12" class="pb-0">
               <h1 :class="h1Style">
@@ -95,6 +95,24 @@
           </v-row>
         </section>
         <section class="container container--fluid" id="Portfolio">
+          <v-row>
+            <v-col cols="12" class="pb-0">
+              <h1 :class="h1Style">
+                Portfolio
+              </h1>
+            </v-col>
+            <v-col cols="12" class="pt-0">
+              <p class="white--text body-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+              </p>
+            </v-col>
+          </v-row>
+        </section>
+        <section class="container container--fluid" id="Contact">
           <v-row>
             <v-col cols="12" class="pb-0">
               <h1 :class="h1Style">
