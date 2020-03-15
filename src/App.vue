@@ -39,14 +39,31 @@
                 About me
               </h1>
             </v-col>
-            <v-col cols="12" class="pt-0">
-              <p class="white--text body-1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
+            <v-col cols="8" class="pt-0">
+              <p class="white--text font-weight-regular title">
+                I'm Santtu, a full-stack developer with 3 years of experience, living in Hämeenlinna, Finland. Currently
+                I work in a development team of Triplan Oy. Triplan Oy specialises in case, information and document
+                management solutions. 'Stack' used depends on the project I am working on but generally it is in the
+                lines of Java backend (Spring Boot or plain Java) with MSSQL and frontend of Vue + Vuetify / Javascript
+                / Vaadin.
               </p>
+              <p class="white--text font-weight-regular title">
+                I thrive to learn new tech, so often off-hours, I find educating myself about the web development and
+                everything around it. When I am not sitting in front of a computer I like to workout and play floorball.
+                And when it is not freezing out here, disc golfing is pretty damn fun and amazing.
+              </p>
+            </v-col>
+            <v-col>
+              <v-list dark dense>
+                <v-list-item class="py-3 my-0" v-for="(info, i) in listInfo" :key="i">
+                  <v-list-item-icon>
+                    <v-icon color="primary" large v-text="info.icon" />
+                  </v-list-item-icon>
+                  <v-list-item-content>
+                    <v-list-item-title class="font-weight-regular title" v-text="info.text" />
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
             </v-col>
           </v-row>
         </section>
@@ -59,17 +76,13 @@
             </v-col>
             <v-col cols="12" class="pt-0">
               <v-timeline dark>
-                <v-timeline-item v-for="n in 3" :key="n" color="primary" large>
+                <v-timeline-item v-for="(jobs, j) in jobsArray" :key="j" color="primary" large>
                   <template v-slot:opposite>
-                    <span class="white--text">Tus eu perfecto</span>
+                    <span class="white--text" v-text="jobs.date" />
                   </template>
                   <v-card class="elevation-2">
-                    <v-card-title class="headline">Lorem ipsum</v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod
-                      convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an
-                      salutandi sententiae.
-                    </v-card-text>
+                    <v-card-title class="headline" v-text="jobs.title" />
+                    <v-card-text v-text="jobs.description" />
                   </v-card>
                 </v-timeline-item>
               </v-timeline>
@@ -145,7 +158,15 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      listInfo: [
+        { icon: 'mdi-account', text: 'Santtu Heleä' },
+        { icon: 'mdi-city', text: 'Hämeenlinna, Finland' },
+        { icon: 'mdi-email', text: 'santtu.helea@gmail.com' },
+        { icon: 'mdi-phone', text: '+358407601099' },
+      ],
+      jobsArray: [{ date: '2017 - Present', title: 'Triplan Oy', description: 'asdasdasdas' }],
+    }
   },
   computed: {
     drawer() {
