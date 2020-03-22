@@ -91,7 +91,7 @@ export default {
     },
     goToSection(element) {
       this.$vuetify.goTo(document.getElementById(element))
-      if (!this.$vuetify.breakpoint.width > 600) {
+      if (this.$vuetify.breakpoint.width < 600) {
         this.drawerOpen = false
       }
     },
