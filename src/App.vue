@@ -27,7 +27,7 @@
             </div>
           </v-row>
         </section>
-        <section class="container widthLimit pt-5" id="About">
+        <section class="container widthLimit pt-10" id="About">
           <v-row>
             <v-col cols="12" class="pb-0">
               <h1 :class="h1Style">
