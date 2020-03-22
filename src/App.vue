@@ -34,7 +34,7 @@
                 About Me
               </h1>
             </v-col>
-            <v-col cols="12" md="8" class="pt-0">
+            <v-col cols="12" md="7" class="pt-0">
               <p class="white--text font-weight-regular title textMaxWidth">
                 My name is Santtu and I am a full-stack developer with 3 years of experience, living in Hämeenlinna,
                 Finland. Currently I work in a development team of Triplan Oy. Triplan Oy is a company that specialises
@@ -46,7 +46,7 @@
                 And when it is not freezing out here, disc golfing is pretty damn fun and amazing.
               </p>
             </v-col>
-            <v-col :class="isMobile ? 'px-0 ml-12' : 'px-0'" cols="12" md="3">
+            <v-col :class="isMobile ? 'px-0 ml-12' : 'px-0'" cols="12" md="4">
               <v-list dark>
                 <v-list-item class="py-0 my-0" v-for="(info, i) in listInfo" :key="i">
                   <v-list-item-icon class="mr-2">
