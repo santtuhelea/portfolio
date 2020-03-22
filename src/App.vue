@@ -177,7 +177,7 @@ export default {
           description:
             'Developing and maintaining software that makes our customers daily tasks easier and more efficient. ',
           description2:
-            'Provide solutions to different integrations whether it is data to be converted to our system or vice versa ',
+            'Providing solutions to different integrations whether it is data to be converted to our system or vice versa ',
         },
         {
           date: '2015 - 2017',
