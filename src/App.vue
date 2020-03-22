@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <nav-bar />
-    <v-content class="bg-svg" :style="isMobile == true ? 'padding: 0 0 0 256px;' : ''">
+    <v-content class="bg-svg" :style="isMobile == true ? 'padding: 0 0 0 256px' : ''">
       <v-container fluid>
         <section class="container container--fluid" id="Landing">
           <v-row justify="end" align="end" style="height: 90vh;" :class="isMobile == true ? 'py-12 px-2' : 'py-6 px-2'">
