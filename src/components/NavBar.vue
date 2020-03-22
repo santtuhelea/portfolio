@@ -73,11 +73,11 @@ export default {
   data() {
     return {
       navLinks: [
-        { title: 'About me', sectionId: 'About' },
+        { title: 'About Me', sectionId: 'About' },
         { title: 'Experience', sectionId: 'Experience' },
         { title: 'Skills & Education', sectionId: 'SkillsAndEdu' },
-        { title: 'Portfolio', sectionId: 'Portfolio' },
-        { title: 'Contact', sectionId: 'Contact' },
+        // { title: 'Portfolio', sectionId: 'Portfolio' },
+        // { title: 'Contact', sectionId: 'Contact' },
       ],
       drawerOpen: this.$vuetify.breakpoint.width > 600 ? true : false,
       menuFab: false,
@@ -91,7 +91,9 @@ export default {
     },
     goToSection(element) {
       this.$vuetify.goTo(document.getElementById(element))
-      this.drawerOpen = false
+      if (!this.$vuetify.breakpoint.width > 600) {
+        this.drawerOpen = false
+      }
     },
   },
 }
