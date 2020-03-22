@@ -33,6 +33,7 @@
       :disable-resize-watcher="true"
       width="256px"
       class="py-0"
+      mobile-break-point="599"
     >
       <v-list-item class="pt-8">
         <v-list-item-content>

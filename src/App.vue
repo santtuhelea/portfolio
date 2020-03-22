@@ -1,15 +1,10 @@
 <template>
   <v-app dark>
     <nav-bar />
-    <v-content class="bg-svg" :style="isMobile == true ? 'padding: 0 0 0 256px' : ''">
+    <v-content class="bg-svg" :style="isMobile == true ? 'padding: 0 0 0 256px;' : ''">
       <v-container fluid>
         <section class="container container--fluid" id="Landing">
-          <v-row
-            justify="end"
-            align="end"
-            style="height: 100vh;"
-            :class="isMobile == true ? 'py-12 px-2' : 'py-6 px-2'"
-          >
+          <v-row justify="end" align="end" style="height: 90vh;" :class="isMobile == true ? 'py-12 px-2' : 'py-6 px-2'">
             <div>
               <div
                 :class="
@@ -23,7 +18,7 @@
               <h1
                 :class="
                   isMobile == true
-                    ? 'display-4 primary--text text-uppercase'
+                    ? 'display-4 primary--text text-uppercase text-right'
                     : 'display-2 primary--text text-uppercase text-right'
                 "
               >
@@ -32,7 +27,7 @@
             </div>
           </v-row>
         </section>
-        <section class="container container--fluid" id="About">
+        <section class="container widthLimit pt-5" id="About">
           <v-row>
             <v-col cols="12" class="pb-0">
               <h1 :class="h1Style">
@@ -40,16 +35,12 @@
               </h1>
             </v-col>
             <v-col cols="12" md="8" class="pt-0">
-              <p class="white--text font-weight-regular title">
+              <p class="white--text font-weight-regular title textMaxWidth">
                 My name is Santtu and I am a full-stack developer with 3 years of experience, living in Hämeenlinna,
                 Finland. Currently I work in a development team of Triplan Oy. Triplan Oy is a company that specialises
                 in case, information and document management solutions.
               </p>
-              <!-- <p class="white--text font-weight-regular title">
-                The stack I use depends on the project I am working on but generally it is in the lines of Java backend
-                (Spring Boot or plain Java) with MSSQL and frontend of Vue + Vuetify / Javascript / Vaadin.
-              </p> -->
-              <p class="white--text font-weight-regular title">
+              <p class="white--text font-weight-regular title textMaxWidth">
                 I thrive to learn new tech, so often off-hours, I find educating myself about the web development and
                 everything around it. When I am not sitting in front of a computer I like to workout and play floorball.
                 And when it is not freezing out here, disc golfing is pretty damn fun and amazing.
@@ -69,7 +60,7 @@
             </v-col>
           </v-row>
         </section>
-        <section class="container container--fluid" id="Experience">
+        <section class="container widthLimit" id="Experience">
           <v-row>
             <v-col cols="12" class="pb-3">
               <h1 :class="h1Style">
@@ -85,11 +76,14 @@
                   <v-card class="elevation-2" color="grey darken-4">
                     <v-card-title class="headline" v-text="jobs.role" />
                     <v-card-subtitle v-text="jobs.employer" class="primary--text title font-weight-medium pt-1" />
-                    <v-card-text v-text="jobs.description" class="white--text title font-weight-regular pt-1 pb-1" />
+                    <v-card-text
+                      v-text="jobs.description"
+                      class="white--text title font-weight-regular pt-1 pb-1 textMaxWidth"
+                    />
                     <v-card-text
                       v-text="jobs.description2"
                       v-if="jobs.description2 != null"
-                      class="white--text title font-weight-regular pt-1 pb-1"
+                      class="white--text title font-weight-regular pt-1 pb-1 textMaxWidth"
                     />
                     <v-card-text v-text="jobs.date" class="white--text title pt-2" />
                   </v-card>
@@ -98,7 +92,7 @@
             </v-col>
           </v-row>
         </section>
-        <section class="container container--fluid pb-12" id="SkillsAndEdu">
+        <section class="container widthLimit pb-12" id="SkillsAndEdu">
           <v-row>
             <v-col cols="12" class="pb-3">
               <h1 :class="h1Style">
@@ -264,8 +258,8 @@ export default {
     },
     h1Style() {
       return this.isMobile
-        ? 'font-weight-bold primary--text mb-2 pb-0 display-3 pl-3'
-        : 'font-weight-bold primary--text mb-2 pb-0 display-1 pl-3'
+        ? 'font-weight-bold primary--text mb-2 pb-0 display-3'
+        : 'font-weight-bold primary--text mb-2 pb-0 display-1'
     },
   },
   methods: {},
@@ -284,5 +278,14 @@ export default {
   word-wrap: break-word;
   word-break: normal;
   hyphens: auto;
+}
+.widthLimit {
+  max-width: 1200px;
+}
+.centerMargin {
+  margin: 0 auto;
+}
+.textMaxWidth {
+  max-width: 37rem;
 }
 </style>

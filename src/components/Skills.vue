@@ -13,6 +13,7 @@
           color="primary"
           :value="skill.level"
           small
+          readonly
         />
       </v-col>
     </v-row>
