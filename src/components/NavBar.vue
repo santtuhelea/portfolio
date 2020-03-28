@@ -8,6 +8,7 @@
       right
       class="mt-12"
       @click.stop="drawerOpen = !drawerOpen"
+      light
     >
       <v-icon>mdi-menu</v-icon>
     </v-btn>
@@ -20,6 +21,7 @@
         bottom
         right
         @click.stop="drawerOpen = !drawerOpen"
+        light
       >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
@@ -33,7 +35,8 @@
       :disable-resize-watcher="true"
       width="256px"
       class="py-0"
-      mobile-break-point="599"
+      mobile-break-point="600"
+      :permanent="this.$vuetify.breakpoint.width > 600 ? true : false"
     >
       <v-list-item class="pt-8">
         <v-list-item-content>
@@ -80,7 +83,7 @@ export default {
         // { title: 'Portfolio', sectionId: 'Portfolio' },
         // { title: 'Contact', sectionId: 'Contact' },
       ],
-      drawerOpen: this.$vuetify.breakpoint.width > 600 ? true : false,
+      drawerOpen: false,
       menuFab: false,
     }
   },
